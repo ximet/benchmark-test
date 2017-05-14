@@ -2,7 +2,7 @@ import React from "react";
 import { render } from 'react-dom';
 
 const stateLess = (props) => {
-  return <div>{'Component'}</div>
+    return <div>{'Component'}</div>
 }
 
 class stateFull extends React.Component {
@@ -12,7 +12,7 @@ class stateFull extends React.Component {
 }
 
 class pureComponent extends React.PureComponent {
-  render () {
-      <div>{'Component'}</div>
-  }
+    render () {
+        <div>{'Component'}</div>
+    }
 }
