@@ -7,17 +7,19 @@ let prevBenchmarkTime = null;
 let benchmarkCount = 0;
 let statefulTotalTime = 0;
 let statelessTotalTime = 0;
+let statelessElementTotalTime = 0;
 let pureTotalTime = 0;
 
 export const reactBenchmark = (count) => {
     Array(count).fill(0).forEach(x => benchmarkCommand());
     console.log(`Stateful took ${statefulTotalTime}ms`);
     console.log(`Stateless took ${statelessTotalTime}ms`);
+    console.log(`Stateless-element took ${statelessElementTotalTime}ms`);
     console.log(`Pure Component took ${pureTotalTime}ms`);
 };
 
 const benchmarkCommand = () => {
-    ['stateful', 'stateless', 'pure'].forEach(kind => {
+    ['stateful', 'stateless', 'stateless-element', 'pure'].forEach(kind => {
         const items = [];
         const length = 20;
         for (let i = 0; i < length; i++) {
@@ -38,6 +40,10 @@ const benchmarkCommand = () => {
                 statelessTotalTime = statelessTotalTime + time;
                 break;
             }
+            case 'stateless-element': {
+                statelessElementTotalTime = statelessElementTotalTime + time;
+                break;
+            }
             case 'stateful': {
                 statefulTotalTime = statefulTotalTime + time;
                 break;
@@ -56,5 +62,5 @@ const benchmarkCommand = () => {
     prevBenchmarkTime = null;
     benchmarkCount = benchmarkCount + 1;
     console.log('.');
-    return
+    return;
 };

@@ -16,8 +16,8 @@ class stateFull extends React.Component {
 class pureComponent extends React.PureComponent {
     render () {
         return (
-                <div>{'Component'}</div>
-            )
+            <div>{'Component'}</div>
+        )
     }
 }
 
@@ -29,6 +29,9 @@ export default class RenderComponent extends React.Component {
             }
             else if(this.props.kind === 'stateless') {
                 return stateLess()
+            }
+            else if(this.props.kind === 'stateless-element') {
+                return React.createElement(stateLess, {}, {});
             }
             else if(this.props.kind === 'pure') {
                 return React.createElement(pureComponent, {}, {});
