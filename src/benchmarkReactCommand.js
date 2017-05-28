@@ -13,7 +13,7 @@ export const reactBenchmark = (count) => {
     Array(count).fill(0).forEach(x => benchmarkCommand());
     console.log(`Stateful took ${statefulTotalTime}ms`);
     console.log(`Stateless took ${statelessTotalTime}ms`);
-    console.log(`Stateless took ${pureTotalTime}ms`);
+    console.log(`Pure Component took ${pureTotalTime}ms`);
 };
 
 const benchmarkCommand = () => {
