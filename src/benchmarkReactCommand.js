@@ -1,3 +1,8 @@
+import React from "react";
+import {render} from 'react-dom';
+import RenderComponent from './react/app.js';
+
+
 let prevBenchmarkTime = null;
 let benchmarkCount = 0;
 let statefulTotalTime = 0;
@@ -21,6 +26,11 @@ const benchmarkCommand = () => {
         const prevTime = performance.now();
 
         //func for render component (example: items.forEach(render))
+        items.forEach(i => {
+            render((
+                <RenderComponent kind={kind}/>
+            ), document.getElementById(kind));
+        });
 
         const time = Math.round(performance.now() - prevTime);
         switch (kind) {
