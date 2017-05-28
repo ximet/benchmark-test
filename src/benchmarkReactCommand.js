@@ -19,8 +19,8 @@ export const reactBenchmark = (count) => {
 const benchmarkCommand = () => {
     ['stateful', 'stateless', 'pure'].forEach(kind => {
         const items = [];
-
-        for (let i = 0, let len = 20; i < len; i++) {
+        const length = 20;
+        for (let i = 0; i < length; i++) {
             items.push(i);
         }
         const prevTime = performance.now();

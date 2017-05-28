@@ -4,7 +4,7 @@ var webpack = require('webpack');
 
 module.exports = {
   entry: [
-            './src/index.js'
+            './src/benchmark.js'
          ],
 
   module: {
