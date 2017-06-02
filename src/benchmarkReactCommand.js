@@ -1,5 +1,5 @@
 import React from "react";
-import {render} from 'react-dom';
+import {render, unmountComponentAtNode} from 'react-dom';
 import RenderComponent from './react/app.js';
 
 
@@ -66,6 +66,10 @@ const benchmarkCommand = () => {
         }
 
         prevBenchmarkTime = time;
+
+        items.forEach(i => {
+            unmountComponentAtNode(document.getElementById(kind));
+        });
     });
 
     prevBenchmarkTime = null;
