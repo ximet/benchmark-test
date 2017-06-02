@@ -23,7 +23,7 @@ class pureComponent extends React.PureComponent {
 
 export default class RenderComponent extends React.Component {
     render() {
-        const dots = Array(500).fill(0).map(x => {
+        const components = Array(500).fill(0).map(x => {
             if(this.props.kind === 'stateful') {
                 return React.createElement(stateFull, {}, {});
             }
@@ -38,6 +38,6 @@ export default class RenderComponent extends React.Component {
             }
         });
 
-        return React.createElement('div', {}, ...dots);
+        return React.createElement('div', {}, ...components);
     }
 }
