@@ -4,11 +4,20 @@ import RenderComponent from './react/app.js';
 
 
 let prevBenchmarkTime = null;
-let benchmarkCount = 0;
-let statefulTotalTime = 0;
-let statelessTotalTime = 0;
-let statelessElementTotalTime = 0;
-let pureTotalTime = 0;
+let benchmarkCount = null;
+let statefulTotalTime = null;
+let statelessTotalTime = null;
+let statelessElementTotalTime = null;
+let pureTotalTime = null;
+
+export const initialState = () => {
+    prevBenchmarkTime = null;
+    benchmarkCount = 0;
+    statefulTotalTime = 0;
+    statelessTotalTime = 0;
+    statelessElementTotalTime = 0;
+    pureTotalTime = 0;
+}
 
 export const reactBenchmark = (count) => {
     Array(count).fill(0).forEach(x => benchmarkCommand());

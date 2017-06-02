@@ -1,6 +1,7 @@
-import { reactBenchmark } from './benchmarkReactCommand.js'
+import { initialState, reactBenchmark } from './benchmarkReactCommand.js'
 
 window.benchmark = (count=10) => {
     console.log(`Running ${count} times ...`);
-    reactBenchmark(count)
+    initialState();
+    reactBenchmark(count);
 };
